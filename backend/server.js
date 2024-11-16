@@ -5,7 +5,7 @@ require('dotenv').config(); // Load environment variables
 
 const app = express();
 
-app.use(cors({ origin: 'http://localhost:3001' }));
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 
 // Hugging Face API configuration
