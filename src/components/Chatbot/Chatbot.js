@@ -15,7 +15,7 @@ const Chatbot = () => {
         console.log('Sending message to server:', input);
     
         try {
-            const response = await fetch('http://localhost:3002/api/chat', {
+            const response = await fetch('https://sickle-cell-disease-43g3-8dka42oth-officialasishkumars-projects.vercel.app/api/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
