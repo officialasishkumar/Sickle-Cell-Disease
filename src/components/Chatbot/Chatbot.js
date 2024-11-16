@@ -15,7 +15,7 @@ const Chatbot = () => {
         console.log('Sending message to server:', input);
     
         try {
-            const response = await fetch('https://sickle-cell-disease-43g3-8dka42oth-officialasishkumars-projects.vercel.app/api/chat', {
+            const response = await fetch('https://sickle-cell-disease.onrender.com/api/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ const Chatbot = () => {
     return (
         <div className="chatbot-container">
             <div className="chatbot-icon" onClick={toggleChatbot}>
-                {isOpen ? '🗙' : '💬'}
+                {isOpen ? 'x' : '💬'}
             </div>
             {isOpen && (
                 <div className="chatbot">
