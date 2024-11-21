@@ -26,8 +26,37 @@ const Chatbot = () => {
             if (!response.ok) {
                 throw new Error('Failed to fetch response');
             }
-    
             const data = await response.json();
+            if (data.reply.toLowerCase().includes("sickle cell disease")) {
+                data.reply = "Sickle cell disease (SCD) is an inherited blood disorder that causes red blood cells to become rigid and sickle-shaped."
+            }
+            if(data.reply.toLowerCase().includes("remedies")) {
+                data.reply = "There is no cure for SCD, but treatments can help manage symptoms and complications."
+            }
+            if(data.reply.toLowerCase().includes("symptoms")) {
+                data.reply = "Symptoms of SCD can include pain, anemia, fatigue, and infections."
+            }
+            if(data.reply.toLowerCase().includes("prevention")) {
+                data.reply = "The best way to prevent SCD is through genetic counseling and testing."
+            }
+            if(data.reply.toLowerCase().includes("treatment")) {
+                data.reply = "Treatments for SCD can include medications, blood transfusions, and bone marrow transplants."
+            }
+            if(data.reply.toLowerCase().includes("diagnosis")) {
+                data.reply = "SCD is usually diagnosed through newborn screening or genetic testing."
+            }
+            if(data.reply.toLowerCase().includes("risk factors")) {
+                data.reply = "The main risk factor for SCD is having a family history of the disease."
+            }
+            if(data.reply.toLowerCase().includes("complications")) {
+                data.reply = "Complications of SCD can include stroke, organ damage, and infections."
+            }
+            if(data.reply.toLowerCase().includes("support")) {
+                data.reply = "Support groups and counseling can help people with SCD and their families cope with the disease."
+            }
+            if(data.reply.toLowerCase().includes("prognosis")) {
+                data.reply = "The prognosis for SCD varies depending on the type and severity of the disease."
+            }
             const botMessage = { text: data.reply, sender: 'bot', timestamp: new Date().toLocaleTimeString() };
             setMessages(prevMessages => [...prevMessages, botMessage]);
         } catch (error) {
