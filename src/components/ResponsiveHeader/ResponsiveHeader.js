@@ -1,8 +1,7 @@
 // ./src/components/ResponsiveHeader/ResponsiveHeader.js
+import React from 'react';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
-import { Link } from 'react-router-dom';
 
 const ResponsiveHeader = () => {
     const [menuOpen, setMenuOpen] = React.useState(false);
@@ -11,14 +10,14 @@ const ResponsiveHeader = () => {
     return (
         <header className="sticky top-0 z-50 bg-white shadow">
             <nav className="container mx-auto flex items-center justify-between py-4">
-                <Link to="/" className="flex items-center">
+                <a href="#home" className="flex items-center">
                     <img
                         src="https://static.vecteezy.com/system/resources/thumbnails/032/524/550/small_2x/kidney-bean-icon-vector.jpg"
                         alt="Logo"
                         className="h-12"
                     />
                     <span className="ml-2 text-xl font-bold text-blue-900">SickleCellAwareness</span>
-                </Link>
+                </a>
                 <button
                     className="lg:hidden text-2xl text-blue-900"
                     onClick={() => setMenuOpen(!menuOpen)}
@@ -26,53 +25,34 @@ const ResponsiveHeader = () => {
                     {barsIcon}
                 </button>
                 <ul
-                    className={`${menuOpen ? "flex" : "hidden"
-                        } lg:flex space-x-6 text-lg font-semibold text-blue-900`}
+                    className={`${menuOpen ? 'flex' : 'hidden'} lg:flex space-x-6 text-lg font-semibold text-blue-900`}
                 >
                     <li>
-                        <Link
-                            to="/"
+                        <a
+                            href="#home"
                             className="hover:text-blue-600 transition"
                             onClick={() => setMenuOpen(false)}
                         >
                             Home
-                        </Link>
+                        </a>
                     </li>
                     <li>
-                        <Link
-                            to="/about-us"
+                        <a
+                            href="#treatments"
                             className="hover:text-blue-600 transition"
                             onClick={() => setMenuOpen(false)}
                         >
                             Treatments
-                        </Link>
+                        </a>
                     </li>
                     <li>
-                        <Link
-                            to="/services"
+                        <a
+                            href="#campaigns"
                             className="hover:text-blue-600 transition"
                             onClick={() => setMenuOpen(false)}
                         >
                             Campaigns
-                        </Link>
-                    </li>
-                    {/* <li> */}
-                        {/* <Link
-                            to="/doctors"
-                            className="hover:text-blue-600 transition"
-                            onClick={() => setMenuOpen(false)}
-                        >
-                            Doctors
-                        </Link> */}
-                    {/* </li> */}
-                    <li>
-                        <Link
-                            to="/contact"
-                            className="hover:text-blue-600 transition"
-                            onClick={() => setMenuOpen(false)}
-                        >
-                            Contact
-                        </Link>
+                        </a>
                     </li>
                 </ul>
             </nav>
