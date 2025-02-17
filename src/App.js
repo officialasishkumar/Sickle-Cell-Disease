@@ -14,7 +14,6 @@ import SingleServiceDetails from './components/pages/SingleServiceDetails/Single
 import PrivateRoute from './components/routes/PrivateRoute';
 import SignUp from './components/SignUp/SignUp';
 import AuthProvider from './contexts/AuthProvider';
-import Chatbot from './components/Chatbot/Chatbot';
 
 function App() {
     return (
@@ -32,15 +31,15 @@ function App() {
                         <Route exact path="/services">
                             <Services></Services>
                         </Route>
-                        <Route exact path="/doctors">
+                        {/* <Route exact path="/doctors">
                             <Doctors></Doctors>
-                        </Route>
+                        </Route> */}
                         <Route exact path="/contact">
                             <Contact></Contact>
                         </Route>
-                        <PrivateRoute exact path="/doctors/:id">
+                        {/* <PrivateRoute exact path="/doctors/:id">
                             <SingleDoctorDetail></SingleDoctorDetail>
-                        </PrivateRoute>
+                        </PrivateRoute> */}
                         <PrivateRoute exact path="/services/:id">
                             <SingleServiceDetails></SingleServiceDetails>
                         </PrivateRoute>
@@ -57,7 +56,6 @@ function App() {
                     <Footer></Footer>
                 </Router>
             </AuthProvider>
-            <Chatbot />
         </div>
     );
 }

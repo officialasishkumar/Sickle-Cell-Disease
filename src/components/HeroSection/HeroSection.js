@@ -1,28 +1,33 @@
+// ./src/components/HeroSection/HeroSection.js
 import React from 'react';
 import HeroBg from '../../img/hero-bg.jpg';
 
 const HeroSection = () => {
     return (
         <div
-            className="overflow-hidden"
+            className="relative overflow-hidden h-screen flex items-center justify-center"
             style={{
-                background: `url(${HeroBg})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundAttachment: 'fixed',
-                backgroundSize: 'cover',
+                background: `url(${HeroBg}) center/cover no-repeat`,
             }}
         >
-            <div className="container mx-auto py-24">
-                <div className="w-full md:w-2/4">
-                    <div className="glass-effect rounded-md my-12 p-8">
-                        <h1 className="text-3xl md:text-6xl primary-color font-semibold my-4">
-                            What is Sickle Cell Disease?
-                        </h1>
-                        <p className="text-white text-base md:text-xl leading-7">
-                        Sickle cell disease (SCD) is a genetic blood disorder characterized by the production of abnormal hemoglobin (hemoglobin S), which causes red blood cells to become rigid and sickle-shaped. This leads to blockages in blood vessels, resulting in pain, anemia, and increased risk of infections and complications. It is inherited in an autosomal recessive pattern and primarily affects individuals of African, Mediterranean, and Middle Eastern descent.
-                        </p>
-                    </div>
-                </div>
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900 via-transparent to-blue-900 opacity-75"></div>
+
+            {/* Content */}
+            <div className="relative z-10 text-center text-white px-4">
+                <h1 className="text-4xl md:text-6xl font-bold mb-4">
+                    Understanding Sickle Cell Disease
+                </h1>
+                <p className="max-w-xl mx-auto mb-8 text-lg md:text-xl">
+                    Learn about the causes, symptoms, and treatments of Sickle Cell Disease.
+                    Empower yourself with knowledge and hope.
+                </p>
+                <a
+                    href="#learn-more"
+                    className="bg-white text-blue-900 px-6 py-3 rounded-full font-semibold hover:bg-blue-100 transition"
+                >
+                    Learn More
+                </a>
             </div>
         </div>
     );

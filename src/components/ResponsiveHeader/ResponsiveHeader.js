@@ -1,91 +1,83 @@
+// ./src/components/ResponsiveHeader/ResponsiveHeader.js
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ResponsiveHeader = ({ fixed }) => {
+const ResponsiveHeader = () => {
     const [menuOpen, setMenuOpen] = React.useState(false);
-    const barsIcon = <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>;
+    const barsIcon = <FontAwesomeIcon icon={faBars} />;
+
     return (
-        <>
-            <div className="flex flex-wrap py-2">
-                <div className="w-full">
-                    <nav className="relative flex flex-wrap items-center justify-between rounded">
-                        <div className="container mx-auto flex flex-wrap items-center justify-between">
-                            <div className="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start">
-                                <Link
-                                    className="leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
-                                    to="/"
-                                >
-                                    <img
-                                        src="https://static.vecteezy.com/system/resources/thumbnails/032/524/550/small_2x/kidney-bean-icon-vector.jpg"
-                                        alt=""
-                                        style={{height:100}}
-                                    />
-                                </Link>
-                                <button
-                                    className="primary-color cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-                                    type="button"
-                                    onClick={() => setMenuOpen(!menuOpen)}
-                                >
-                                    {barsIcon}
-                                </button>
-                            </div>
-                            <div
-                                className={
-                                    'lg:flex flex-grow items-center' +
-                                    (menuOpen ? ' flex' : ' hidden')
-                                }
-                                id="example-navbar-info"
-                            >
-                                <ul className="flex flex-col w-full md:w-max md:flex-row list-none md:ml-auto font-semibold">
-                                    <li className="nav-item;">
-                                        <Link
-                                            className="flex items-center uppercase font-bold leading-snug primary-color hover:opacity-75 px-6 py-4 hover:bg-blue-200 cursor-pointer border mx-1 text-lg"
-                                            to="/"
-                                        >
-                                            Home
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link
-                                            className="flex items-center uppercase font-bold leading-snug primary-color hover:opacity-75 px-6 py-4 hover:bg-blue-200 cursor-pointer border mx-1 text-lg"
-                                            to="/about-us"
-                                        >
-                                            Treatments
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link
-                                            className="flex items-center uppercase font-bold leading-snug primary-color hover:opacity-75 px-6 py-4 hover:bg-blue-200 cursor-pointer border mx-1 text-lg"
-                                            to="/services"
-                                        >
-                                            Campaigns
-                                        </Link>
-                                    </li>
-                                    {/* <li className="nav-item">
-                                        <Link
-                                            className="flex items-center uppercase font-bold leading-snug primary-color hover:opacity-75 px-6 py-4 hover:bg-blue-200 cursor-pointer border mx-1 text-lg"
-                                            to="/doctors"
-                                        >
-                                            Doctors
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link
-                                            className="flex items-center uppercase font-bold leading-snug primary-color hover:opacity-75 px-6 py-4 hover:bg-blue-200 cursor-pointer border mx-1 text-lg"
-                                            to="/contact"
-                                        >
-                                            Contact
-                                        </Link>
-                                    </li> */}
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </>
+        <header className="sticky top-0 z-50 bg-white shadow">
+            <nav className="container mx-auto flex items-center justify-between py-4">
+                <Link to="/" className="flex items-center">
+                    <img
+                        src="https://static.vecteezy.com/system/resources/thumbnails/032/524/550/small_2x/kidney-bean-icon-vector.jpg"
+                        alt="Logo"
+                        className="h-12"
+                    />
+                    <span className="ml-2 text-xl font-bold text-blue-900">SickleCellAwareness</span>
+                </Link>
+                <button
+                    className="lg:hidden text-2xl text-blue-900"
+                    onClick={() => setMenuOpen(!menuOpen)}
+                >
+                    {barsIcon}
+                </button>
+                <ul
+                    className={`${menuOpen ? "flex" : "hidden"
+                        } lg:flex space-x-6 text-lg font-semibold text-blue-900`}
+                >
+                    <li>
+                        <Link
+                            to="/"
+                            className="hover:text-blue-600 transition"
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/about-us"
+                            className="hover:text-blue-600 transition"
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            Treatments
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/services"
+                            className="hover:text-blue-600 transition"
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            Campaigns
+                        </Link>
+                    </li>
+                    {/* <li> */}
+                        {/* <Link
+                            to="/doctors"
+                            className="hover:text-blue-600 transition"
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            Doctors
+                        </Link> */}
+                    {/* </li> */}
+                    <li>
+                        <Link
+                            to="/contact"
+                            className="hover:text-blue-600 transition"
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            Contact
+                        </Link>
+                    </li>
+                </ul>
+            </nav>
+        </header>
     );
 };
+
 export default ResponsiveHeader;

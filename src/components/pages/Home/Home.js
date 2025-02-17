@@ -1,25 +1,16 @@
+// ./src/components/pages/Home/Home.js
 import React from 'react';
-import AppointmentSection from '../../AppointmentSection/AppointmentSection';
 import HeroSection from '../../HeroSection/HeroSection';
-import MeetDoctorSection from '../../MeetDoctorSection/MeetDoctorSection';
-import ServiceSection from '../../ServiceSection/ServiceSection';
 import WelcomeSection from '../../WelcomeSection/WelcomeSection';
+import Testimonials from "../../Testimonials/Testimonials" // New import
 
 const Home = () => {
     return (
         <div>
-            <HeroSection></HeroSection>
-            {/* <div className="-mt-24 mb-8">
-                <Schedule></Schedule>
-            </div> */}
-            <WelcomeSection></WelcomeSection>
-            {/* <ServiceSection></ServiceSection> */}
-            {/* <BestPracticeSection></BestPracticeSection>
-            <TestSection></TestSection>
-            <Departments></Departments>
-            <ChooseUsSection></ChooseUsSection> */}
-            {/* <MeetDoctorSection></MeetDoctorSection> */}
-            {/* <AppointmentSection></AppointmentSection> */}
+            <HeroSection />
+            <WelcomeSection />
+            <Testimonials />
+            {/* Other sections like Services, AppointmentSection, etc. */}
         </div>
     );
 };
