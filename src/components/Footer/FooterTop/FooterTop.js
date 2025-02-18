@@ -26,9 +26,20 @@ const FooterTop = () => {
                                 Your involvement can make a difference!
                             </p>
                             <h2 className="text-4xl">Contact Us</h2>
-                            <p>
-                                Email: support@sicklecellawareness.org
-                            </p>
+                            <div className="mt-4">
+                                <p className="mb-2">
+                                    Vanita Jain<br/>
+                                    <a href="mailto:vjain@electronics.du.ac.in" className="text-blue-600 hover:underline">
+                                        vjain@electronics.du.ac.in
+                                    </a>
+                                </p>
+                                <p>
+                                    Arun Kumar Dubey<br/>
+                                    <a href="mailto:arun.dubey@bvcoend.ac.in" className="text-blue-600 hover:underline">
+                                        arun.dubey@bvcoend.ac.in
+                                    </a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <div className="border mx-10 md:mx-0 rounded-lg p-8">
@@ -36,10 +47,6 @@ const FooterTop = () => {
                             <h2 className="text-2xl">Resources</h2>
                             <p className="pb-5">
                                 Access valuable resources and information about sickle cell disease, treatment options, and support groups.
-                            </p>
-                            <h2 className="text-4xl">Call Us</h2>
-                            <p>
-                                Phone: 1-800-555-0199
                             </p>
                         </div>
                     </div>
