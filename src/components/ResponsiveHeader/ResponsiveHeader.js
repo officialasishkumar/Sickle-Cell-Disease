@@ -65,7 +65,7 @@ const ResponsiveHeader = () => {
                 {/* Desktop Menu */}
                 <div className="hidden lg:flex items-center space-x-8">
                     <ul className="flex space-x-8 text-lg font-medium">
-                        {['home', 'treatments', 'campaigns', 'resources'].map((section) => (
+                        {['home', 'treatments', 'campaigns'].map((section) => (
                             <li key={section}>
                                 <a
                                     href={`#${section}`}
