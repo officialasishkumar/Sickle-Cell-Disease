@@ -5,9 +5,6 @@ const Footer = () => {
     return (
         <div className="bg-white">
             <FooterTop></FooterTop>
-            <p className="text-center m-5 pb-5 text-xl">
-                Copyright &copy; 2024 | All Right Reserved!
-            </p>
         </div>
     );
 };
